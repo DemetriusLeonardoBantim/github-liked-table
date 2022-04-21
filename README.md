@@ -1,8 +1,8 @@
 Tecnologias usadas:
-  React
-  Typescript
-  Styled Components
-  Axios
+  React /
+  Typescript /
+  Styled Components /
+  Axios /
   
  Para rodar o projeto basta clonar esse repositório e usar o comando no seu terminal: npm install ou yarn.
  Versão do node utilizada: 16.13.0
