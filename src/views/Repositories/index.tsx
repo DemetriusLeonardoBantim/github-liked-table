@@ -22,11 +22,13 @@ export function Reposiories(){
       repository.id === id ? { ...repository, liked: !repository.liked, } : repository
     )
     setRepositories(likedRepository)
+
+    
   }
 
   useEffect(() => {
       const saveRepository = repositories.filter(repository => repository.liked)
-      if (saveRepository.length) {
+      if (repositories.length) {
         localStorage.setItem(
           '@GithubRepositories:Liked',
           JSON.stringify(saveRepository)
@@ -39,7 +41,8 @@ export function Reposiories(){
       const response = await api.get<RepositoryProps[]>('')
       setRepositories(response.data.map(infoRepository => ({
         ...infoRepository,
-        liked: JSON.parse(localStorage.getItem('@GithubRepositories:Liked') || '[]').some((liked: RepositoryProps) => liked.id == infoRepository.id)
+        liked: JSON.parse(localStorage.getItem('@GithubRepositories:Liked') || '[]').
+        some((liked: RepositoryProps) => liked.id == infoRepository.id)
       })))
 
     }
